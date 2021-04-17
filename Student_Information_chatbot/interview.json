@@ -1,0 +1,203 @@
+{"intents": [
+            {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day","Hey there"],
+         "responses": ["Hello!", "Good to see you again!", "Hi there, how may I help you?","Wonderful,thanks. What can i do for you?","Pleased to meet you. how can I help?","It’s nice to see you again! did you need help?","Nice to see you!","Pleased to meet you. how can I help?","It’s been a while!", "It’s nice to see you again! did you need help?","It’s good to see you.", "Hi there, how can I help?","Hello! Long time no see."],
+         "context_set": ""
+        },
+            {"tag": "goodbye",
+         "patterns": ["See you later", "Goodbye", "I am Leaving", "Have a Good day","bye", "Ok bye"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!","Have a nice day","I look forward to our next meeting","See you later", "Have a nice day", "Bye! Come back again soon.", "Bye bye!", "Have a nice day", "I look forward to our next meeting", "Take care"],
+         "context_set": ""
+        },
+            {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?","What is this?"],
+         "responses": ["You can call me CUBOT.", "I'm CUBOT!", "My name is CUBOT"],
+         "context_set": ""
+        },
+            {"tag": "intro",
+         "patterns": ["tell me about yourself", "what can you do", "what do you do", "how can i use you", "what do you know"],
+         "responses": ["I am an AI chatbot here to answer your queries", "I can answer your questions!"],
+         "context_set": ""
+        },
+            {"tag": "program",
+         "patterns": ["what programs are offered by Chandigarh University","which programs are offered by CU","how many programs does CU offer"],
+         "responses": ["Basically CU offers 129 programs. For more info check <a href =\"https://programs.upgrad.com/chandigarh-university-online-degree-programs\" target=\"_blank\">here</a>"],
+         "context_set": ""
+        },
+ 	    {"tag": "fee",
+         "patterns": ["what is the fee structure", "fee related info","fees","fee info"],
+         "responses": ["You can see fee structure for all the courses  <a href =\"https://www.cuchd.in/admissions/course-fee.php\" target=\"_blank\">here</a>"],
+         "context_set": ""
+        },
+	    {"tag": "location",
+         "patterns": ["location of chandigarh university","Where is CU located","How do I get to chandigarh university", "location of CU","address of chandigarh university","how to reach chandigarh university"],
+         "responses": ["You can reach the location of Chandigarh University using the map given <a href =\"https://tinyurl.com/3vyy8wry\" target=\"_blank\">here</a>: "],
+         "context_set": ""
+        },
+	    {"tag": "ID",
+         "patterns": ["Where should i get a student Identification Card?", "when should i get my ID Card","how do I get my ID card?","I did not get an ID card"],
+         "responses": ["Student identification card will be provided by your respective class teachers on orientation day of Chandigarh University"],
+         "context_set": ""
+        },
+	    {"tag": "new id",
+         "patterns": ["How do I get a new Id card?", "new id card", "how to get new Id card", "I want a new Id card","I lost my Id card what do I do"],
+         "responses": ["To get a new ID card issued you have to contact the student welfare department."],
+         "context_set": ""
+        },
+	    {"tag": "counseling",
+         "patterns": ["Do you offer counseling services?", "how do I get counseling?", "I want counseling"],
+         "responses": ["Sure, we offer counseling services for our students on first floor of Admission block", "You can get all the details of our counselling session on CU official site <a href =\"https://www.sarvgyan.com/articles/chandigarh-university-counselling\" target=\"_blank\">click here</a>: "],
+         "context_set": ""
+        },
+	    {"tag": "attendance",
+         "patterns": ["how much attendance is required","what are the criteria for attendance", "how much attendance do i need"],
+         "responses": ["You have to maintain 75% attendance throughout the semester and you can see your attendance on C.U.I.M.S. by simply navigating to ACADEMICS>MY ATTENDANCE "],
+         "context_set": ""
+        },	
+	    {"tag": "facility",
+         "patterns": ["facility", "what are the facilities on campus","What amenities are provided by Chandigarh University"],
+         "responses": ["The facilities provided by Chandigarh University are a Library, Cafeteria, Hostel, Sport Complex, Labs, Moot Court, Design Studio, Gym, Hospital/Medical, Wifi, Shuttle Service, Auditorium, Music Room, Dance Room, Convenience Store and many more"],
+         "context_set": ""
+        },
+	    {"tag": "cucet",
+         "patterns": ["cucet", "what is cucet exam"],
+         "responses": ["CUCET is an Entrance Test for admission to Engineering and Management programmes in Chandigarh University", "CUCET is also a Scholarship Test aimed at rewarding the potential of young aspirants to win scholarships and study in courses of their choice"],
+         "context_set": ""
+        },
+	    {"tag": "placement",
+         "patterns": ["placement", "top recruiters","How is the placement at CU","what companies come to CU"],
+         "responses": ["We witnessed a growth of 30% in number of Multi-Nationals visiting the campus for recruitment of fresh talent.For more info <a href =\"https://www.cuchd.in/placements/\" target=\"_blank\"> check here </a>","Our top Recruiters are Google, Microsoft, Amazon, Flipkart, cognizant, samsung etc. For more info <a href =\"https://www.cuchd.in/placements/\" target=\"_blank\"> check here</a>"],
+         "context_set": ""
+        },
+	    {"tag": "social media",
+         "patterns": ["social media", "social media handles","are you on social media","where can I find you online"],
+         "responses": ["You can contact us on facebook,instagram and twitter here <a href =\"https://www.facebook.com/chandigarhuniversitygharuan/\" target=\"_blank\">facebook</a>, <a href=\"https://www.instagram.com/chandigarhuniversity/?hl=en\" target=\"_blank\">Instagram</a>,<a href=\"https://twitter.com/chandigarh_uni?lang=en/\"target=\"_blank\">Twitter</a>"],
+         "context_set": ""
+        },
+	    {"tag": "syllabus",
+         "patterns": ["how do I see my syllabus?","where do i get my syllabus", "course plan","where can i find my syllabus"],
+         "responses": ["For syllabus go to your C.U.I.M.S. account and then Navigate to Academics>Scheme & Syllabus"],
+         "context_set": ""
+        },
+	    {"tag": "timetable",
+         "patterns": ["where can i see my timetable", "what's the timing of my classes","where can i see schedule of my full day classes","what are the courses do we have this semester"],
+         "responses": ["For Course and Timetable related info go to your C.U.I.M.S. account and then Navigate to Academics>My Timetable "],
+         "context_set": ""
+        },
+            {"tag": "result",
+         "patterns": ["exam result", "test results", "marksheet", "where can I see my marks", "test scores","how do I check my exam results"],
+         "responses": ["You can see your exam results on C.U.I.M.S. by going to Examination>Results", "You can see your marks on C.U.I.M.S. by going to Examination>Student Marks View"],
+         "context_set": ""
+        },
+            {"tag": "contact",
+         "patterns": ["Your contact number", "Where can we find you", "how to reach you","how do I contact you"],
+         "responses": ["You can contact your Class Representative or Mentor to get in touch with us!"],
+         "context_set": ""
+        },
+            {"tag": "datesheet",
+         "patterns": ["where can I find my datesheet", "how do I see my datesheet", "date of my exams", "when will be exams conducted"],
+         "responses": ["You can find your datesheet on C.U.I.M.S. by going to Examination>My Date Sheet  "],
+         "context_set": ""
+        },
+	    {"tag": "Assignment",
+         "patterns": ["where can i upload my assignment ", "where can i see my submitted assignment","where do I submit my assignment"],
+         "responses": ["You can submit your Assignment on C.U.I.M.S. by going to Academics>Assignment upload"],
+         "context_set": ""
+        },
+	    {"tag": "Leave",
+         "patterns": ["how to apply for leave", "where should i apply for leave","leave policy","process to take leave","how do I apply for DL?","How do I apply for a holiday"],
+         "responses": ["You can apply for leave on C.U.I.M.S. by going to Academics > Student leave application ","To know leave policy go to student leave application inside the academics by logging  to C.U.I.M.S." ],
+         "context_set": ""
+        },
+	    {"tag": "feedback",
+         "patterns": ["how to give feedback","where can i give my feedback", "I want to give feedback", "How do I give feedback?"],
+         "responses": ["For feedback Chandigarh University gives True Opinion Platform to the Class Representative. You can also access True Opinion Platform by going to your C.U.I.M.S.->Academics"],
+         "context_set": ""
+        },
+	    {"tag": "pay",
+         "patterns": ["how to do online payment of fee", "how to pay semester fee online"],
+         "responses": ["For online fee payment first login to C.U.I.M.S. account then navigate to Accounts tab"],
+         "context_set": ""
+        },
+	    {"tag": "offline",
+         "patterns": ["how do I pay my of semester fee on campus", "How to pay fee offline", "how do I pay my fees offline","How do I pay my dues offline"],
+         "responses": ["For offline fee payment you have to go Block- 3", "Please visit Block-3 to see pay your dues on campus"],
+         "context_set": ""
+        },
+	    {"tag": "services",
+         "patterns": ["How do I apply for ICTS services", "How do I apply for OIR services","How do I apply for semester exchange program","How do I study abroad"],
+         "responses": ["You can take benefits of ICTS and OIR services by going to Administration on C.U.I.M.S. account"],
+         "context_set": ""
+        },
+	    {"tag": "career",
+         "patterns": ["Where can i see the career option", "I want to register for career option", "how to register for different career option", "where we can register for career option"],
+         "responses": ["For registration of career option go to your C.U.I.M.S. account and navigate to Career options by DCPD "],
+         "context_set": ""
+        },
+	    {"tag": "club",
+         "patterns": ["How to join clubs", "how to participate in clubs","How do I join a club?"],
+         "responses": ["You may visit the Department of Student Welfare in Block-3 for information regarding participation in club activities"],
+         "context_set": ""
+        },
+	    {"tag": "mock test",
+         "patterns": ["how we can give practice tests", "where do i have to give practice test of my courses","How do I attempt a mock test", "How to give mock test"],
+         "responses": ["You can give a mock test of any subject on C.U.I.M.S. by going to Examination->Mock test"],
+         "context_set": ""
+        },
+	    {"tag": "profile",
+         "patterns": ["where can we check our profile","How do I access my profile information", "how do I see my profile?"],
+         "responses": ["You can see your profile on C.U.I.M.S. by going to the profile tab on the navigation bar"],
+         "context_set": ""
+        },
+	    {"tag": "Announcement",
+         "patterns": ["How to see announcement", "where do i go to see any announcement", "how do I see my annouuncements"],
+         "responses": ["You can check Announcements on the homepage of your C.U.I.M.S. account"],
+         "context_set": ""
+        },
+	    {"tag": "library",
+         "patterns": ["how i can check particular book is in library or not","how can I get a book from the library","how to issue books from library","How do I issue a book"],
+         "responses": ["After login  to C.U.I.M.S. you can search books in Library books (OPAC) inside the Library tab","For issuing a book you need your library card and ID card "],
+         "context_set": ""
+        },
+	    {"tag": "Credit",
+         "patterns": ["I want to know the credits system", "How many credits we have to collect","how to complete credits"],
+         "responses": ["Students have to complete 4 credit(1 Credit=15hrs) in every year by doing 60 hours courses from NPTEL, coursera, internshala"],
+         "context_set": ""
+        },
+	    {"tag": "talent",
+         "patterns": ["how i can show my talent","where can i show my talent","what i have to do to show my talent"],
+         "responses": ["If you have talent you can register on C.U.I.M.S. by going to System>Talent Search program"],
+         "context_set": ""
+        },
+	    {"tag": "hostel",
+         "patterns": ["Do you have a hostel in campus","Is hostel service available?", "Do you have accomodation facility in the campus?"],
+         "responses": ["Yes! Our campus has separate hostels for both boys and girls."],
+         "context_set": ""
+        },
+            {"tag": "hostel facilities",
+         "patterns": ["What hostel facilities are available?","What is provided in the hostel facility?"],
+         "responses": ["Some of the facilities are 24/7 power supply, wifi/internet services, gym, volley-ball court, basket-ball court, badminton court etc."],
+         "context_set": ""
+        },
+ 	    {"tag": "thanks",
+         "patterns": ["Thank you!","thanks for the help", "thanks!"],
+         "responses": ["You are most welcome","Much obliged!","Happy to help!","My pleasure","Welcome!","No problem","No worries.","Don't mention it.","It was the least I could do.","Glad to help.","Sure!","The pleasure is all mine!"],
+         "context_set": ""
+        },
+	    {"tag": "mooc",
+         "patterns": ["What are MOOC", "what is mooc for"],
+         "responses": ["Massive Open Online Courses (MOOCs) are free online courses available for anyone to enroll. MOOCs provide an affordable and flexible way to learn new skills, advance your career and deliver quality educational experiences at scale."],
+         "context_set": ""
+        },
+	    {"tag": "admission",
+         "patterns": ["How do I take admission","How do I apply for admission in Chandigarh University", "I want to take admission"],
+         "responses": ["To apply for admission in Chandigarh University click <a href =\"https://www.cuchd.in/admissions/how-to-apply.php\"target=\"_blank\">here.</a>"],
+         "context_set": ""
+        },
+	    {"tag": "motto",
+         "patterns": ["what is the motto of chandigarh university","What is your mission statement", "What is your motto"],
+         "responses": ["The motto of Chandigarh University is to Discover. Learn . Empower."],
+         "context_set": ""
+        }
+   ]
+}

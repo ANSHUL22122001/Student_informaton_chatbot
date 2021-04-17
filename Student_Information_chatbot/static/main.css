@@ -1,0 +1,197 @@
+html{
+    --dark-color-a: #667aff;
+    --light-color: #c8cfff;
+    --text-color: black;
+    --white-color: white;
+    --change-color: black;
+    --other-message-color: var(--white-color);
+    --other-text-message-color: black;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background: var(--light-color);
+    margin: 20px;
+    background-image: url("WhatsApp Image 2021-03-15 at 12.33.09 AM.jpeg");
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+body.dark{
+    --dark-color-a: black;
+    --light-color: #424242;
+    --text-color: rgb(0 127 255);
+    --white-color: white;
+    --other-message-color: #424242;
+    --other-text-message-color: white;
+}
+	ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 5px 15px;
+    background: var(--light-color);
+    color:var(--text-color);
+    border: 0;
+    font-size: 17px;
+    border-radius: 55px;
+background: #c8cfff;
+box-shadow:  13px -13px 98px #505366,
+             -13px 13px 98px #ffffff;
+}
+
+/* Chat Page */
+
+.chat-container {
+   opacity: 0.9;
+    max-width: 1100px;
+    background: var(--white-color);
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 21px;
+background: #667aff;
+box-shadow:  -12px -12px 21px #293166,
+             12px 12px 21px #a3c3ff;
+}
+
+.chat-header {
+    background: var(--dark-color-a);
+    color: var(--text-color);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chat-header h1{
+    color: var(--text-color);
+}
+
+.chat-main {
+    display: block;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.chat-messages {
+    padding: 10px;
+    min-height: 440px;
+    max-height: 440px;
+    overflow-y: scroll;
+    background-color: #DFDFDF   ;
+}
+.message-box{
+    margin-top: 10px;
+}
+.my-message-box{
+    background-color: var(--white-color);
+}
+.message{
+    max-width: 80%;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+.other-message{
+    float: left;
+    background-color: var(--other-message-color);
+    color: var(--other-text-message-color);
+}
+.my-message{
+    float: right;
+    background-color:rgb(0 127 255);
+    color: var(--white-color);
+}
+.separator{
+    width:100%;
+    height: 20px;
+    float: left;
+}
+
+.chat-form-container {
+    padding: 20px 30px;
+    background-color: var(--dark-color-a);
+}
+
+.chat-form-container form {
+    display: flex;
+}
+.chat-form-container input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    flex: 1;
+    border-radius: 55px;
+    background: #c8cfff;
+    box-shadow:  13px -13px 98px #505366,
+             -13px 13px 98px #ffffff;
+}
+
+@media (max-width: 700px) {
+
+    .chat-sidebar {
+        display: none;
+    }
+
+    .chat-messages {
+        min-height: 440px;
+        max-height: 440px;
+    }
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: var(--light-color);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: var(--white-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+    background-color: var(--text-color);
+}
+
+
+.fa-moon {
+    color: rgb(0 127 255);
+}
+
+.fa-sun {
+    color: yellow;
+}

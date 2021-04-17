@@ -1,0 +1,366 @@
+%%HTML
+<!DOCTYPE html>
+<html lang="en" data-theme='light'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <title>ChatBot app</title>
+    <style>
+        html {
+            --try: #0066ff;
+            --header-color: #34c6d3;
+            --dark-color-a: #667aff;
+            --light-color: #c8cfff;
+            --text-color: black;
+            --white-color: white;
+            --change-color: black;
+            --other-message-color: var(--white-color);
+            --other-text-message-color: black;
+            --message-box: #c8cfff;
+            --tmessage-box: #c8cfff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            background: var(--light-color);
+            margin: 0px;
+        }
+
+        body.dark {
+            --dark-color-a: rgb(36, 35, 35);
+            --light-color: #424242;
+            --text-color: rgb(0 127 255);
+            --white-color: white;
+            --other-message-color: #424242;
+            --other-text-message-color: white;
+            --message-box: #777676;
+            --header-color: #34c6d3;
+            --tmessage-box: white;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 5px 15px;
+            background: var(--light-color);
+            color: var(--text-color);
+            border: 0;
+            font-size: 17px;
+            border-radius: 15px;
+            background: var(--tmessage-box);
+        }
+
+        /* Chat Page */
+
+        .chat-container {
+            opacity: 0.9;
+            max-width: 1100px;
+            background: var(--white-color);
+            margin: 10px auto;
+            overflow: hidden;
+            border-radius: 21px;
+            background: #667aff;
+            box-shadow: -12px -12px 21px #293166,
+                12px 12px 21px #a3c3ff;
+        }
+
+        .chat-header {
+            background: var(--dark-color-a);
+            color: var(--text-color);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h1 {
+            color: var(--text-color);
+        }
+
+        .chat-main {
+            display: block;
+            grid-template-columns: 1fr 3fr;
+        }
+
+
+        .chat-messages {
+            padding: 10px;
+            min-height: 440px;
+            max-height: 440px;
+            overflow-y: scroll;
+            opacity: 0.9;
+            background-color: var(--message-box);
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: linear-gradient(transparent, var(--dark-color-a));
+            border-radius: 6px;
+        }
+
+        .message-box {
+            margin-top: 10px;
+
+        }
+
+        .my-message-box {
+            background-color: var(--white-color);
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 5px;
+
+            box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        .other-message {
+            float: left;
+            background-color: var(--other-message-color);
+            color: var(--other-text-message-color);
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+        }
+
+        .my-message {
+            float: right;
+            background-color: rgb(0 127 255);
+            color: var(--white-color);
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .separator {
+            width: 100%;
+            height: 20px;
+            float: left;
+        }
+
+        .chat-form-container {
+            padding: 20px 30px;
+            background-color: var(--dark-color-a);
+        }
+
+        .chat-form-container form {
+            display: flex;
+        }
+
+        .chat-form-container input[type='text'] {
+            font-size: 16px;
+            padding: 5px;
+            height: 40px;
+            flex: 1;
+            border-radius: 15px;
+            background: var(--tmessage-box);
+            color: black;
+            border: none;
+        }
+
+        @media (max-width: 700px) {
+
+            .chat-sidebar {
+                display: none;
+            }
+
+            .chat-messages {
+                min-height: 440px;
+                max-height: 440px;
+            }
+        }
+
+
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .label {
+            background-color: var(--light-color);
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px;
+            position: relative;
+            height: 26px;
+            width: 50px;
+            transform: scale(1.5);
+        }
+
+        .label .ball {
+            background-color: var(--white-color);
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            height: 22px;
+            width: 22px;
+            transform: translateX(0px);
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked+.label .ball {
+            transform: translateX(24px);
+            background-color: var(--text-color);
+        }
+
+
+        .fa-moon {
+            color: rgb(0 127 255);
+        }
+
+        .fa-sun {
+            color: yellow;
+        }
+
+        #particles-js {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            background-color: var(--dark-color-a);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="particles-js"></div>
+    <div class="chat-container">
+
+        <header class="chat-header">
+            <img src="https://res.cloudinary.com/deyqebprw/image/upload/v1615204686/samples/chatbot_soc74f.jpg" alt=""
+                style="width: 40px;border-radius: 50%;">
+            <h1>CU BOT</h1>
+            <div>
+                <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>
+        </header>
+
+        <main class="message-area chat-messages" id="message-area">
+            
+            <div id="botbox"></div>
+
+        </main>
+
+        <div id="botform" class="chat-form-container">
+            <form action="" id="chatForm" method="POST">
+                <input placeholder="Enter Message" required autocomplete="off" type="text" class="form-control"
+                    style="display: inline;" name="user_query" id="user_query">
+                &nbsp
+                <button type="submit" form="chatForm" class="btn"><b></b><i class="fas fa-paper-plane"></i>
+                    Send</b></button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="static/particles.js"></script>
+    <script type="text/javascript" src="static/app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const chk = document.getElementById('chk');
+
+        chk.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+        });
+
+        function appendChat(user, bot) {
+            var d = new Date();
+            var hours = d.getHours();
+
+            var minutes;
+            var d = new Date();
+
+            if (d.getMinutes() < 10)
+                minutes = "0" + d.getMinutes();
+            else
+                minutes = d.getMinutes();
+
+            $('#botbox').append(`<div class="my-message-box message-box" data-aos="fade-down-left" data-aos-delay="100" id="my-box"><img src="https://res.cloudinary.com/deyqebprw/image/upload/v1615204782/samples/generaluser_biacsi.png" alt="" style="width: 35px;border-radius: 50%;float:right;margin-left: 10px;height:35px"> <div class="message my-message"><h5 style="font-size:15px;opacity: 0.7;color: black;"><b>Student ${hours}:${minutes}</b></h5><p style="font-size: 15px; margin: 5px 0px;">${user}</p></div><div class="separator"></div></div>
+                                 <div class="others-message-box message-box" data-aos="fade-down-right" data-aos-delay="2000" id="bot-box"><img src="https://res.cloudinary.com/deyqebprw/image/upload/v1615204686/samples/chatbot_soc74f.jpg" alt="" style="width: 35px;border-radius: 50%;float:left;margin-right: 10px;margin-top: 3px;"><div class="message other-message"><h5 style="font-size:15px;opacity: 0.7;color: rgb(255, 0, 0);"><b>CU BOT  ${hours}:${minutes}</b></h5><p style="font-size: 15px;margin: 5px 0px;">${bot}</p></div><div class="separator"></div></div>`);
+            $(document).ready(function () {
+                $('#message-area').animate({ scrollTop: 100000 }, 800)
+            })
+            
+            
+            
+
+            
+            
+        }
+
+        document.getElementById('chatForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            userInputTag = document.getElementById('user_query');
+            user_input = userInputTag.value;
+            fetch('../chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: user_input }),
+            }).then(response => response.json()).then(some => appendChat(user_input, some))
+            userInputTag.value = "";
+            /*
+            e.preventDefault();
+            fetch('../voice', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: some}),
+            })*/
+        });
+
+
+
+    </script>
+</body>
+
+</html>
