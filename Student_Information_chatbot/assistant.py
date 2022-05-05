@@ -5,10 +5,6 @@ import json
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
-## Uncomment if tensorflow giving error
-##physical_devices = tf.config.list_physical_devices('GPU') 
-##tf.config.experimental.set_memory_growth(physical_devices[0], True)
-
 with open('interview.json') as file:
     data = json.load(file)
 
@@ -35,7 +31,7 @@ max_len = 20
 trunc_type = 'post'
 oov_token = "<OOV>"
 
-tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_token) # adding out of vocabulary token
+tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_token)
 tokenizer.fit_on_texts(training_sentences)
 
 
@@ -45,8 +41,6 @@ enc = LabelEncoder()
 enc.fit(training_labels)
 training_labels = enc.transform(training_labels)
 
-
-# new_model = tf.keras.models.load_model("duranz/z_bot")
 new_model = tf.keras.models.load_model("mymodel.h5")
 
 
